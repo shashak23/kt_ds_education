@@ -2,30 +2,35 @@ package classninstance;
 
 public class Student {
 	// 필드=속성 생성
-	 int java;
-	 int python;
-	 int cpp;
-	 int csharp;
+//	 int java;
+//	 int python;
+//	 int cpp;
+//	 int csharp;
+	ScoreVO score;
 	
 	 // this 사용해서 생성자 만들어 보기 -> main의 객체 필드에 맞게 변경하기 
-	 public Student(int java, int cpp, int csharp, int python) {
-		 this.java = java;
-		 this.cpp = cpp;
-		 this.csharp = csharp;
-		 this.python = python;
+	 public Student(ScoreVO score) {
+//		 this.java = java;
+//		 this.cpp = cpp;
+//		 this.csharp = csharp;
+//		 this.python = python;
+		 this.score = score;
 	 }
 	 
 	
 	// 필드 4개를 더한 총합
 	public int getSumAllScores() {
-		int result = java + python + cpp + csharp;
+		int result = score.cpp + score.csharp + score.java + score.python;
+		//int result = java + python + cpp + csharp;
 		return result;
 	}
 	
 	public double getAverage() {
 		// 1. 메소드는 하나를 만들어두면 클래스안에서 언제든지 호출이 가능하다
 		// 1-1. 메소드 <-> 메소드 서로 호출이 가능함
-		double result = java + python + cpp + csharp;
+		//double result = java + python + cpp + csharp;
+		double result = score.cpp + score.csharp + score.java + score.python;
+
 		
 		// 2번
 		double average = result / 4.0 * 100; 
@@ -82,13 +87,14 @@ public class Student {
 	
 	public static void main(String[] args) {
 		// student = 학생1
-		Student student = new Student(100, 83, 98, 97);
+		ScoreVO score = new ScoreVO(100, 98, 83, 97);
+		Student student = new Student(score);
 		
 		// 값을 구할 각 필드별 점수 부여!!
-		student.java = 100;  // 변수라서 그냥 = 10 으로 할당함
-		student.python = 83;
-		student.cpp = 98;
-		student.csharp = 97;
+//		student.java = 100;  // 변수라서 그냥 = 10 으로 할당함
+//		student.python = 83;
+//		student.cpp = 98;
+//		student.csharp = 97;
 		
 		// 멤버 변수를 모두 더한 값
 		int result = student.getSumAllScores();
@@ -104,11 +110,13 @@ public class Student {
 		System.out.println(getABCDE);
 		
 		// siha = 학생2
-		Student siha = new Student(10, 20, 30, 50);
-		siha.cpp = 10;
-		siha.csharp = 20;
-		siha.java= 30;
-		siha.python = 50;
+		ScoreVO score1 = new ScoreVO(100, 98, 83, 97);
+		Student siha = new Student(score1);
+		
+//		siha.cpp = 10;
+//		siha.csharp = 20;
+//		siha.java= 30;
+//		siha.python = 50;
 		
 		int sum = siha.getSumAllScores();
 		double average2 = siha.getAverage();
