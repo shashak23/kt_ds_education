@@ -7,20 +7,20 @@ public class CoffeeShop {
 	
 	// 생성자 초기화 = 클래스 내 값 고정
 	// 3. 파라미터로 생성해서 값을 넣어보자
-	public CoffeeShop(int iceAmericano, int hotAmericano){
-//		iceAmericano = 2500;
-//		hotAmericano = 2000;
-		iceAmericano = iceAmericano;
-		hotAmericano = hotAmericano;
-	}
+//	public CoffeeShop(int iceAmericano, int hotAmericano){
+////		iceAmericano = 2500;
+////		hotAmericano = 2000;
+//		iceAmericano = iceAmericano;
+//		hotAmericano = hotAmericano;
+//	}
 	
 	// 1. 생성자가 만들어 둔 this라는 생성자에 각자 파라미터를 넣는 것.
 	// 1-1. 아이스에는 아이스를, 핫에는 핫을 넣기
 	// 1-2. 여기서 this는 아래의 main의 cs와 항상 같은 객체를 가리킨다.
-//	public CoffeeShop(int iceAmericano, int hotAmericano) {
-//		this.iceAmericano = iceAmericano; // 8. this의 iceAmericano에 할당을 해라! 라는 뜻!!
-//		this.hotAmericano = hotAmericano; // 8-1. 그러면 this를 가진 값들에 고정시킨 2500과 2000이 들어감
-//	}
+	public CoffeeShop(int iceAmericano, int hotAmericano) {
+		this.iceAmericano = iceAmericano; // 8. this의 iceAmericano에 할당을 해라! 라는 뜻!!
+		this.hotAmericano = hotAmericano; // 8-1. 그러면 this를 가진 값들에 고정시킨 2500과 2000이 들어감
+	}
 	
 	public int orderCoffee(int menu, int quantity) {
 		if(menu ==1) {
