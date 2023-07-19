@@ -1,6 +1,5 @@
 package method.practice;
 
-import java.util.Scanner;
 
 public class MethodHomework2 {
 	
