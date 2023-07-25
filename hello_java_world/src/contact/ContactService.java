@@ -3,6 +3,7 @@ package contact;
 public interface ContactService {
 	
 	/**
+	 * 이렇게 하는 걸 인터페이스 설계를 한다라고 함
 	 * 등록 (Create)
 	 * @param contact : 등록하려는 연락처의 정보
 	 * @see contact.ContactVO : contact 패키지에 있는 ContactVO를 참고해라
@@ -24,6 +25,7 @@ public interface ContactService {
 	 * @return 연락처 배열에서 index에 해당하는 ContactVO가 반환됨
 	 * 			index값이 존재 하지 않는 경우 ArrayIndexOutOfBoundsException이 발생한다.
 	 * @see contact.ContactVO
+	 * @throws ArrayIndexOutOfBoundsException
 	 */
 	// 조회 -- 1개만 조회, 배열의 1 인덱스를 조회할거에요
 	public ContactVO readOne(int index);	

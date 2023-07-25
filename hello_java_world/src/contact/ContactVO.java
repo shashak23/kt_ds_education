@@ -32,11 +32,6 @@ public class ContactVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void showInfo() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
+
 	
 }
