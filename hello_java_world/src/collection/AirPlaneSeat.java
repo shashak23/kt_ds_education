@@ -53,12 +53,13 @@ public class AirPlaneSeat {
 				
 				case 1 : 
 					   System.out.print("Seat Number:");
-					   seatName = sc.nextLine(); 
-					   if(airplaneSeat.get(seatName)) {
-						   // 이미 불리언이라서 == 안해도 되고
-						   System.out.println(airplaneSeat);
-						   // at으로 불러와요?
-					   }
+					   String seat = sc.nextLine(); 
+//					   if (seat != null && !seat) {
+//                           airplaneSeat.put(seatName, true);
+//                           System.out.println(seatName + " seat has been reserved.");
+//                       } else {
+//                           System.out.println("Seat " + seatName + " is already booked. Choose another seat.");
+//                       }
 		               
 		               break;
 		              
