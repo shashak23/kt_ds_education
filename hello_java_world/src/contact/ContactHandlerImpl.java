@@ -1,12 +1,12 @@
 package contact;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.List;
 
 public class ContactHandlerImpl implements ContactHandler{
 	// ContactApp에서 이름 바꾸기 알크 + 쉬프트 + 알
 	// 이름 바꾸고 인터페이스 만들기 
 	private ContactService contactService;  // 2단계
+
 
 	// 생성자 하나 넣어주고
 	public ContactHandlerImpl(ContactService contactService) {
@@ -16,22 +16,6 @@ public class ContactHandlerImpl implements ContactHandler{
 	@Override
 	// 등록 메소드로 빼기 -- 2단계
 	public void create(String name, int phone, String email) {
-		
-		// if문을 활용한 예외처리
-		// if(name == null || phone == null || email == null ){
-		// 	sysout("이름, 전화번호, 이메일은 필수값입니다.");
-		// return;
-		// RequireFieldException rfe = new RequireFieldException("name, phone, email");
-		// throw rfe;  // throw가 되는 순간 모든 동작은 무시하고 create 가 중단 됨
-		// 그래서 상위에다가 써야하는데 너무 기니까 이걸 줄여 볼게요 
-		// throw new RequireFieldException("name, phone, email"); //위의 3줄을 한 줄로 쓸 수 있다.
-		// }
-		
-		//                       2부터 9, 0부터 9가 최소 3글자 3개까지
-		// if(phone.matches("^010-[2-9][0-9]{3,3}-[0-9]{4,4}$")){}
-		// 위의 꺼가 맞으면 ()에 맞게 출력해라 인데 우리는 틀린 걸 해보는 거니까
-		// {}안에 sysout("전화번호 형식이 아닙니다.")
-		
 		ContactVO contact = new ContactVO(name, phone, email);
 		contactService.create(contact);
 	}
@@ -39,12 +23,11 @@ public class ContactHandlerImpl implements ContactHandler{
 	@Override
 	// 전체 조회 -- 2단계
 	public void readAll() {
-		ContactVO[] contactlist = contactService.readAll();
-		for(int i=0; i<contactlist.length; i++) {
-			ContactVO tempContact = contactlist[i];
-			System.out.println("name: " + tempContact.getName());
-			System.out.println("phone: " + tempContact.getPhone());
-            System.out.println("email: " + tempContact.getEmail());
+		List<ContactVO> contactlist = contactService.readAll();
+		for(ContactVO contact : contactlist) {
+			System.out.println("name: " + contact.getName());
+			System.out.println("phone: " + contact.getPhone());
+            System.out.println("email: " + contact.getEmail());
 		}
 	}
 	

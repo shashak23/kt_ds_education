@@ -1,5 +1,7 @@
 package contact;
 
+import java.util.List;
+
 public interface ContactService {
 	
 	/**
@@ -17,7 +19,7 @@ public interface ContactService {
 	 * @see contact.ContactVO
 	 */
 	// 조회 -- 적어도 1개 이상이 보여야겠죠? 그럼 contactvo를 배열로 받기 
-	public ContactVO[] readAll();
+	public List<ContactVO> readAll();
 	
 	/**
 	 * 개별 조회(Read)
