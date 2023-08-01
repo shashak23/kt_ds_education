@@ -34,14 +34,41 @@ public class AirPlaneSeat {
 					// 키 및 값을 추가함
 					seats.put(seatNumber, false);
 				}
+
 				if (seats.get(seatNumber)) {
 					System.out.println(seatNumber + ", is already full.");
 					System.out.println("Try other seat plz");
 				} else {
 					seats.put(seatNumber, true);
 					System.out.println(", succesfully Reservation!");
+
+				switch(num) {
+				
+				case 1 : 
+					   System.out.print("Seat Number:");
+					   String seat = sc.nextLine(); 
+//					   if (seat != null && !seat) {
+//                           airplaneSeat.put(seatName, true);
+//                           System.out.println(seatName + " seat has been reserved.");
+//                       } else {
+//                           System.out.println("Seat " + seatName + " is already booked. Choose another seat.");
+//                       }
+		               
+		               break;
+		              
+			    case 2:
+		               System.out.println("Check Seat : ");
+		               sc.close();
+		               System.exit(0);
+		               
+		               break;
+		
+	            default:
+	                System.out.println("Wrong Number. Try again!!!!!!");
+
 				}
 
+			}
 			}
 		}
 	}
@@ -85,7 +112,7 @@ public class AirPlaneSeat {
 			System.out.println("This game is The End!!");
 
 		}
-	}
+
 
 //	public static void main(String[] args) {
 //		AirPlaneSeat sr = new AirPlaneSeat();
@@ -157,4 +184,6 @@ public class AirPlaneSeat {
 //		}
 //
 //	}
-}
+
+	}
+	}
